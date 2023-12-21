@@ -1,7 +1,7 @@
 package edu;
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
+//import java.util.Scanner;
 /*
  * In this code for convert number up to one Crore.
  */
@@ -50,7 +50,12 @@ class NumberToWords {
 			numberToWords(num/10000000,"Crore");       //The user entered number is Eight Digit means value is First Crore,second Thousand,then Hundred,final number.
 			numberToWords(num/100000%100,"Lakh");      //Then the Value converted by upto Lakh that can be process of before thousands and Hundred.
 			numberToWords(num/1000%100,"Thousand");    //Here the 4 digit value is converted at thousands,Hundred,then number.
-			numberToWords(num/100%10,"Hundred");	   //Here the 3 digit value can process of hundred and number.
+
+			if(num==100 || num==200 || num==300 || num==400 || num==500 || num==600 || num==700 || num==800 || num==900) {
+				numberToWords(num/100%10,"Hundred");     //Here the 3 digit value can process of hundred and number.
+			}
+			else
+			numberToWords(num/100%10,"Hundred and");  //Except this number after hundred print and word.
 			numberToWords(num%100," ");	
 			sc.close();
 		}
@@ -58,6 +63,4 @@ class NumberToWords {
 			System.err.println("Your number is out of Range");
 		}
 	}
-
 }
-
