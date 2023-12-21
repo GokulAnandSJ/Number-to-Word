@@ -56,6 +56,7 @@ class NumberToWords {
 			}
 			else
 			numberToWords(num/100%10,"Hundred and");  //Except this number after hundred print and word.
+		}
 			numberToWords(num%100," ");	
 			sc.close();
 		}
